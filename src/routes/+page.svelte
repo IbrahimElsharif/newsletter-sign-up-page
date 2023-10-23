@@ -1,21 +1,52 @@
 <script>
+    import {createEventDispatcher} from "svelte";
     import Success from "./components/Success.svelte";
 
-    //const Email = document.getElementById("email-input").nodeValue;
+    const dispatch = createEventDispatcher();
 
+    let emailInput;
+
+    function checkEmail() {
+        emailInput = document.getElementById("emailInput").value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const SignUp = document.getElementById("sign-up");
+        const Success = document.getElementById("success");
     
+        if (emailRegex.test(emailInput)) {
+            console.log("Valid email:", emailInput);
+            SignUp.classList.remove("grid");
+            SignUp.classList.add("hidden");
+            Success.classList.remove("hidden");
+            Success.classList.add("grid");
+            // Perform actions with the valid email input
+        } else {
+            console.log("Invalid email.");
+            // Perform actions when the email input is invalid
+        }
+    }
+    
+
+    /*const handleSubmit = () => {
+        const Email = document.getElementById("emailInput").value;
+        const SignUp = document.getElementById("sign-up")
+        const Success = document.getElementById("success")
+        SignUp.classList.remove("grid");
+        SignUp.classList.add("hidden");
+        Success.classList.remove("hidden");
+        Success.classList.add("grid");
+    }*/
 
 </script>
 
-<Success />
+<Success {emailInput} />
 
-<main class="grid h-screen place-items-center ">
+<main class="grid h-screen place-items-center" id="sign-up">
 
     <!-- Sign Up Card -->
-    <div class=" bg-white flex w-3/5  rounded-3xl">
+    <div class=" bg-white flex rounded-3xl" id="card">
 
         <!-- Text Side -->
-        <div class="my-20 flex flex-col space-y-6 pl-10 ">
+        <div class="my-16 flex flex-col space-y-6 pl-10 ">
 
             <!-- Header -->
             <h1 class="text-6xl font-bold">Stay updated!</h1>
@@ -42,11 +73,11 @@
             <!-- Email Input -->
             <form action="/" class="space-y-2">
                 <label for="email-input">Email address</label>
-                <input type="email" name="email-input" placeholder="email@company.com" id="email-input" class="block w-96 h-12  pl-5 rounded-lg border-solid border-2">
+                <input type="email" name="email-input" placeholder="email@company.com" id="emailInput" class="block w-96 h-12  pl-5 rounded-lg border-solid border-2">
             </form>
             
             <!-- Submit -->
-            <button type="submit" class="bg-darkSlateGrey w-96 h-12 text-white rounded-lg hover:bg-gradient-to-r from-red-500 via-red-400 to-orange-400 ">Subscribe to monthly newsletter</button>
+            <button type="submit" on:click={checkEmail} class="bg-darkSlateGrey w-96 h-12 text-white rounded-lg hover:bg-gradient-to-r from-red-500 via-red-400 to-orange-400 ">Subscribe to monthly newsletter</button>
         </div>
 
         <!-- Image -->
@@ -59,4 +90,7 @@
 
 <style>
 
+    #card {
+        width: 55rem;
+    }
 </style>

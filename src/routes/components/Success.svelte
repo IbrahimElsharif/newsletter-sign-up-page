@@ -1,12 +1,12 @@
 <script>
-
+    export let emailInput;
 
 </script>
 
-<main class="hidden h-screen place-items-center ">
+<main class="hidden h-screen place-items-center" id="success">
 
     <!-- Success Message -->
-    <div class="flex flex-col p-8 space-y-6 bg-white w-1/4 h-1/2 rounded-3xl">
+    <div class="flex flex-col p-10 space-y-6 bg-white rounded-3xl" id="successCard">
 
         <!-- Success Icon -->
         <img src=".\images\icon-success.svg" class="w-1/6" alt="">
@@ -16,7 +16,7 @@
 
         <!-- Paragraph -->
         <p class="text-sm">
-            A confirmation email has been sent to . 
+            A confirmation email has been sent to <span class="font-bold">{emailInput}</span>. 
             Please open it and click the button inside to confirm your subscription.
         </p>
 
@@ -28,4 +28,8 @@
 
 <style>
     
+    #successCard {
+        height: 25.5rem;
+        width: 24.5rem;
+    }
 </style>
