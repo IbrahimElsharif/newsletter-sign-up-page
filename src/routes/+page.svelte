@@ -13,7 +13,7 @@
         const Success = document.getElementById("success");
     
         if (emailRegex.test(emailInput)) {
-            console.log("Valid email:", emailInput);
+            //console.log("Valid email:", emailInput);
             SignUp.classList.remove("grid");
             SignUp.classList.add("hidden");
             Success.classList.remove("hidden");
