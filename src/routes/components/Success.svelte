@@ -4,7 +4,6 @@
     const handleDismiss = () => {
         const SignUp = document.getElementById("sign-up");
         const Success = document.getElementById("success");
-
         SignUp.classList.remove("hidden");
         SignUp.classList.add("grid");
         Success.classList.remove("grid");
