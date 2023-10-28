@@ -10,7 +10,8 @@ export default {
       colors: {
         darkSlateGrey: "hsl(234, 29%, 20%)",
         charcoalGrey: "hsl(235, 18%, 26%)",
-        grey: "hsl(231, 7%, 60%)"
+        grey: "hsl(231, 7%, 60%)",
+        "red-150" : "rgb(254, 214, 214)"
       },
       width: {
         "88": "22rem"

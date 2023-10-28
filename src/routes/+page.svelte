@@ -18,9 +18,15 @@
             SignUp.classList.add("hidden");
             Success.classList.remove("hidden");
             Success.classList.add("grid");
+            document.getElementById("not-valid").innerHTML = "";
+            document.getElementById("emailInput").classList.remove("bg-red-150", "border-red-400", "placeholder:text-red-500");
+            document.getElementById("emailInput").style.color = "";
             // Perform actions with the valid email input
         } else {
             console.log("Invalid email.");
+            document.getElementById("not-valid").innerHTML = "Valid email required";
+            document.getElementById("emailInput").classList.add("bg-red-150", "border-red-400", "placeholder:text-red-500");
+            document.getElementById("emailInput").style.color = "rgb(239, 68, 68)";
             // Perform actions when the email input is invalid
         }
     }
@@ -73,7 +79,8 @@
             <!-- Email Input -->
             <form action="/" class="space-y-2">
                 <label for="email-input">Email address</label>
-                <input type="email" name="email-input" placeholder="email@company.com" id="emailInput" class="block w-96 h-12  pl-5 rounded-lg border-solid border-2">
+                <p id="not-valid" class="float-right text-red-500 pr-24 text-xs"></p>
+                <input type="email" name="email-input" placeholder="email@company.com" id="emailInput" class="block w-96 h-12 pl-5 rounded-lg border-solid border-2">
             </form>
             
             <!-- Submit -->
