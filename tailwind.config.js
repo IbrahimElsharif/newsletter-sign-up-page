@@ -3,6 +3,10 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      screens: {
+        sm: {"min": "320px", "max": "425px"},
+        md: {"min": "426px", "max": "1024px"}
+      },
       colors: {
         darkSlateGrey: "hsl(234, 29%, 20%)",
         charcoalGrey: "hsl(235, 18%, 26%)",
