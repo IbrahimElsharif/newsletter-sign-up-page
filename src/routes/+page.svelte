@@ -52,7 +52,7 @@
     <div class=" bg-white flex rounded-3xl" id="card">
 
         <!-- Text Side -->
-        <div class="my-16 flex flex-col space-y-6 pl-10 ">
+        <div id="text-side" class="my-16 flex flex-col space-y-6 pl-10 ">
 
             <!-- Header -->
             <h1 class="text-6xl font-bold">Stay updated!</h1>
@@ -79,16 +79,16 @@
             <!-- Email Input -->
             <form action="/" class="space-y-2">
                 <label for="email-input">Email address</label>
-                <p id="not-valid" class="float-right text-red-500 pr-24 text-xs"></p>
-                <input type="email" name="email-input" placeholder="email@company.com" id="emailInput" class="block w-96 h-12 pl-5 rounded-lg border-solid border-2">
+                <p id="not-valid" class="float-right text-red-500 pr-24 text-xs md:pr-2"></p>
+                <input type="email" name="email-input" placeholder="email@company.com" id="emailInput" class="block w-96 h-12 pl-5 rounded-lg border-solid border-2 md:w-88">
             </form>
             
             <!-- Submit -->
-            <button type="submit" on:click={checkEmail} class="bg-darkSlateGrey w-96 h-12 text-white rounded-lg hover:bg-gradient-to-r from-red-500 via-red-400 to-orange-400 ">Subscribe to monthly newsletter</button>
+            <button type="submit" on:click={checkEmail} class="bg-darkSlateGrey w-96 h-12 text-white rounded-lg hover:bg-gradient-to-r from-red-500 via-red-400 to-orange-400 md:w-88">Subscribe to monthly newsletter</button>
         </div>
 
         <!-- Image -->
-        <div class="mx-4 my-auto">
+        <div id="image" class="mx-4 my-auto">
             <img src=".\images\illustration-sign-up-desktop.svg" alt="">
         </div>
     </div>
@@ -99,5 +99,19 @@
 
     #card {
         width: 55rem;
+    }
+    
+    @media (max-width: 980px) {
+        #card {
+            width: 45rem;
+        }
+
+        #image {
+            height: 400px;
+        }
+
+        #text-side {
+            width: 60%;
+        }
     }
 </style>

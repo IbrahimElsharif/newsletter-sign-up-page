@@ -5,7 +5,7 @@ export default {
     extend: {
       screens: {
         sm: {"min": "320px", "max": "425px"},
-        md: {"min": "426px", "max": "1024px"}
+        md: {"min": "426px", "max": "980px"}
       },
       colors: {
         darkSlateGrey: "hsl(234, 29%, 20%)",
