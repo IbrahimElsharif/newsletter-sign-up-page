@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       screens: {
-        sm: {"min": "320px", "max": "425px"},
-        md: {"min": "426px", "max": "980px"}
+        sm: {"min": "320px", "max": "426px"},
+        md: {"min": "427px", "max": "980px"},
+        lg: {"min": "980px"},
       },
       colors: {
         darkSlateGrey: "hsl(234, 29%, 20%)",
